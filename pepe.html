@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamesDrop</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        body {
+            background: url('https://media1.tenor.com/m/6mvbG8J7-EgAAAAd/minecraft-cherry.gif') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+            transition: background 0.5s, color 0.5s;
+        }
+        body.dark-mode {
+            background: #181818 !important;
+            background-image: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1500&q=80') !important;
+            background-size: cover !important;
+            color: #fff !important;
+        }
+        body.dark-mode main {
+            background: rgba(24,24,24,0.92) !important;
+            color: #fff !important;
+        }
+        body.dark-mode header, body.dark-mode footer {
+            background: rgba(30,30,30,0.95) !important;
+            color: #fff !important;
+        }
+        body.dark-mode .music-box,
+        body.dark-mode .yt-box {
+            background: rgba(40,40,40,0.95) !important;
+            color: #fff !important;
+        }
+        main {
+            background: rgba(255,255,255,0.85);
+            border-radius: 16px;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            box-shadow: 0 4px 16px rgba(30,60,114,0.08);
+            position: relative;
+            transition: background 0.5s, color 0.5s;
+        }
+        header, footer {
+            background: rgba(30,60,114,0.85);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 16px;
+            margin: 20px auto 0 auto;
+            max-width: 600px;
+            transition: background 0.5s, color 0.5s;
+        }
+        h1, h2, h3, span, button, li, a {
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+        }
+        button {
+            background: #1e3c72;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            margin-left: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+        button:hover {
+            background: #ff0000;
+        }
+        #darkModeBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 200;
+            background: #222;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 28px;
+            font-size: 1.1em;
+            box-shadow: 0 2px 8px rgba(30,60,114,0.15);
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+        #darkModeBtn:hover {
+            background: #444;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 12px;
+        }
+        .music-box {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            background: rgba(255,255,255,0.85);
+            border-radius: 12px;
+            padding: 12px 18px;
+            box-shadow: 0 2px 8px rgba(30,60,114,0.15);
+            display: flex;
+            align-items: center;
+            z-index: 100;
+            transition: background 0.5s, color 0.5s;
+        }
+        .yt-box {
+            position: fixed;
+            top: 40px;
+            right: 40px;
+            background: rgba(255,255,255,0.85);
+            border-radius: 12px;
+            padding: 12px 18px;
+            box-shadow: 0 2px 8px rgba(30,60,114,0.15);
+            display: flex;
+            align-items: center;
+            z-index: 100;
+            transition: background 0.5s, color 0.5s;
+        }
+        .yt-logo {
+            width: 36px;
+            height: 36px;
+            margin-right: 10px;
+        }
+        .yt-channel {
+            font-size: 1em;
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+            color: #ff0000;
+            font-weight: bold;
+        }
+        @media (max-width: 700px) {
+            .music-box, .yt-box {
+                position: static;
+                margin: 10px auto;
+                display: block;
+                text-align: center;
+            }
+            #darkModeBtn {
+                position: static;
+                margin: 20px auto 0 auto;
+                display: block;
+            }
+        }
+        .img-link {
+            display: block;
+            text-align: center;
+            margin-bottom: 18px;
+        }
+        .img-link img {
+            max-width: 100%;
+            max-height: 180px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(30,60,114,0.15);
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón modo oscuro -->
+    <button id="darkModeBtn" onclick="toggleDarkMode()">🌙 Modo oscuro</button>
+    <!-- Música a la izquierda -->
+    <div class="music-box">
+        <audio id="audio" src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b5fae5b9.mp3" autoplay loop></audio>
+        <span style="font-size:1em;">🎵 Música</span>
+    </div>
+    <!-- YouTube a la derecha -->
+    <div class="yt-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube Logo" class="yt-logo">
+        <span class="yt-channel">
+            <a href="https://youtube.com/@g4mesdr0p?si=0A5vuq1CdrVzxD5O" target="_blank" style="color:#ff0000;text-decoration:none;">@Gamesdrop</a>
+        </span>
+    </div>
+    <header>
+        <h1 style="font-style: italic;">Descarga juegos gratis</h1>
+    </header>
+    <main>
+        <section>
+            <!-- Imagen arriba de todo -->
+            <a class="img-link" href="https://yt3.googleusercontent.com/yxQjUP8q8vqAv4yESGRw07gARezvhmxIAjhXdgWNbtkaTvmfrWVLFU_wI1tHt5cgYfgcrL7TzA=s160-c-k-c0x00ffffff-no-rj" target="_blank">
+                <img src="https://yt3.googleusercontent.com/yxQjUP8q8vqAv4yESGRw07gARezvhmxIAjhXdgWNbtkaTvmfrWVLFU_wI1tHt5cgYfgcrL7TzA=s160-c-k-c0x00ffffff-no-rj" alt="Imagen personalizada">
+            </a>
+            <!-- Encabezado nivel 3 -->
+            <h3 style="text-align:center; margin-bottom: 18px;">¡Bienvenido! Elegí tu juego favorito y descargalo gratis.</h3>
+            <h2>Descargas directas</h2>
+            <ol>
+                <li><span>The Forest(CON ONLINE) (Mediafire)</span><button onclick="window.open('https://www.mediafire.com/file/6axgderq0o45bbh/TH3_FORSTGAMEDROP.rar/file', '_blank')">Descargar</button></li>
+                <li><span>Minecraft (Tlauncher)</span><button onclick="window.open('https://tlauncher.org/en/install-on-windows.html', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://drive.google.com/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://www.mediafire.com/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://mega.nz/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://drive.google.com/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://www.mediafire.com/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://mega.nz/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://drive.google.com/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://www.mediafire.com/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://mega.nz/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://drive.google.com/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://www.mediafire.com/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://mega.nz/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://drive.google.com/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://www.mediafire.com/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://mega.nz/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://drive.google.com/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://www.mediafire.com/', '_blank')">Descargar</button></li>
+                <li><span>PRONTO</span><button onclick="window.open('https://mega.nz/', '_blank')">Descargar</button></li>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <p>juegos con crack online en progreso👍</p>
+    </footer>
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            const btn = document.getElementById('darkModeBtn');
+            btn.textContent = body.classList.contains('dark-mode') ? '☀️ Modo claro' : '🌙 Modo oscuro';
+        }
